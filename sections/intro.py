@@ -1,9 +1,22 @@
 import streamlit as st
 
 def render(df):
-    """渲染介绍部分"""
+    """
+    渲染介绍部分
+    
+    参数:
+    df (pandas.DataFrame): 包含YouTube数据的DataFrame
+    
+    功能:
+    1. 显示项目介绍和目标
+    2. 描述数据集内容
+    3. 说明分析目标
+    4. 提供数据注意事项
+    """
+    # 项目介绍标题
     st.header("项目介绍 | Project Introduction")
     
+    # 项目介绍内容 - 使用insight-box样式
     st.markdown("""
     <div class="insight-box">
     <p>本项目旨在通过对YouTube数据集的深入分析和可视化，揭示YouTube平台上内容创作者的表现、用户行为模式以及各类别视频的受欢迎程度。</p>
@@ -11,7 +24,9 @@ def render(df):
     </div>
     """, unsafe_allow_html=True)
     
+    # 数据集说明标题
     st.subheader("数据集说明 | Dataset Description")
+    # 数据集说明内容
     st.write("""
     本数据集包含YouTube频道和视频的详细统计信息，包括但不限于：
     - 视频观看次数 (videoViewCount)
@@ -32,7 +47,9 @@ def render(df):
     - Video categories
     """)
     
+    # 分析目标标题
     st.subheader("分析目标 | Analysis Objectives")
+    # 分析目标内容
     st.write("""
     1. 探索不同类别视频的分布情况
     2. 分析关键指标之间的相关性
@@ -47,7 +64,9 @@ def render(df):
     5. Evaluate channel performance and content quality
     """)
     
+    # 数据注意事项标题
     st.subheader("数据注意事项 | Data Caveats")
+    # 数据注意事项内容
     st.write("""
     <div class="insight-box">
     <ul>
